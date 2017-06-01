@@ -63,4 +63,32 @@ class AirportListTableController: UITableViewController {
         return cell
     }
     
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AirportDetailInfo" {
+            guard let cell = sender as? UITableViewCell else {
+                fatalError("Mis-configured storyboard! The sender should be a cell.")
+            }
+            self.prepareOpenAiportDetailInfo(for: segue, sender: cell)
+        } else {
+            super.prepare(for: segue, sender: sender)
+        }
+    }
+    
+    
+    func prepareOpenAiportDetailInfo(for segue: UIStoryboardSegue, sender: UITableViewCell) {
+        
+        let AirportListTableDetailController = segue.destination as! AirportListTableDetailController
+        let senderIndexPath = self.tableView.indexPath(for: sender)!
+        
+        var dictemp : [String: String] = [:]
+        dictemp["AirportName"] = airportList[senderIndexPath.section][senderIndexPath.row]["Airport"]
+        dictemp["CountryName"] = airportList[senderIndexPath.section][senderIndexPath.row]["Country"]
+        dictemp["CityName"] = airportList[senderIndexPath.section][senderIndexPath.row]["ServedCity"]
+        dictemp["CityCode"] = airportList[senderIndexPath.section][senderIndexPath.row]["IATA"]
+        
+        AirportListTableDetailController.detailInfo = dictemp
+    }
+    
 }

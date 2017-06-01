@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "953927251B347780C39C87B5522ABC71A2FB5A28",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "537A4DC98A374E0E6E309E1314888454B2A6D35A" : 9223372036854775807,
+    "953927251B347780C39C87B5522ABC71A2FB5A28" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "539BA084-5B4B-4968-8BA9-3A90414F7737",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "537A4DC98A374E0E6E309E1314888454B2A6D35A" : "",
+    "953927251B347780C39C87B5522ABC71A2FB5A28" : "Airport%20List\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Airport List",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Airport List.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nick66551\/newmediawall.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "537A4DC98A374E0E6E309E1314888454B2A6D35A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nick66551\/AirportList.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "953927251B347780C39C87B5522ABC71A2FB5A28"
+    }
+  ]
+}
