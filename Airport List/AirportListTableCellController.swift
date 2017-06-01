@@ -10,6 +10,15 @@
 import UIKit
 
 class AirportListTableCellController: UITableViewCell {
+    @IBOutlet weak var city: UILabel!
+    @IBOutlet weak var shortName: UILabel!
+    @IBOutlet weak var airportName: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
     
 }

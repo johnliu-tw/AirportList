@@ -10,30 +10,57 @@
 import UIKit
 
 class AirportListTableController: UITableViewController {
-    @IBOutlet weak var AirportName: UILabel!
     
-    @IBOutlet weak var shrotName: UILabel!
+    var airportList: [[[String: String]]] = []
     
-    @IBOutlet weak var city: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let myTableView = UITableView()
-        myTableView.register(
-            UITableViewCell.self, forCellReuseIdentifier: "AirportListCell")
-        myTableView.delegate = self
-        myTableView.dataSource = self
+
         
         if let path = Bundle.main.path(forResource: "airports", ofType: "plist") {
-            if let arrayOfItems = NSArray(contentsOfFile: path) {
-                print(arrayOfItems)
+        let arrayOfItems = NSArray(contentsOfFile: path) as! [[String:String]]
+        for item in arrayOfItems {
+            for num in 0...airportList.count{
+                if num == airportList.count{
+                    airportList.append([item])
+                    break;
+                }
+                else if item["Country"] == airportList[num][0]["Country"]{
+                    airportList[num].append(item)
+                    break;
+                }
             }
+        }
+            
+        
         }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return airportList.count
+    }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return airportList[section].count
+    }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return airportList[section][0]["Country"]
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AirportListCell", for: indexPath) as! AirportListTableCellController
+        
+        cell.airportName.text = airportList[indexPath.section][indexPath.row]["Airport"]
+        cell.city.text = airportList[indexPath.section][indexPath.row]["ServedCity"]
+        cell.shortName.text = airportList[indexPath.section][indexPath.row]["IATA"]
+        cell.shortName.textColor = UIColor.gray
+        cell.city.textColor = UIColor.gray
+        return cell
+    }
     
 }
